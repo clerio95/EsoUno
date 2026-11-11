@@ -1,0 +1,32 @@
+[package]
+name = "eso-firmware"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "eso-firmware"
+path = "src/main.rs"
+test = false
+bench = false
+
+[dependencies]
+eso-core = { path = "../eso-core" }
+panic-halt = "1.0.0"
+ufmt = "0.2.0"
+
+[dependencies.arduino-hal]
+git = "https://github.com/Rahix/avr-hal"
+rev = "dec22e4fa573daedc9e3346a26dee23692f1499f"
+features = ["arduino-uno"]
+
+[profile.dev]
+panic = "abort"
+lto = true
+opt-level = "s"
+
+[profile.release]
+panic = "abort"
+codegen-units = 1
+debug = true
+lto = true
+opt-level = "s"

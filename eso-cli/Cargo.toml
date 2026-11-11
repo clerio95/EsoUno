@@ -1,0 +1,12 @@
+[package]
+name = "eso-cli"
+version = "0.1.0"
+edition = "2021"
+description = "Runs Brainfuck files on the laptop with the same core as the Uno"
+
+[[bin]]
+name = "eso"
+path = "src/main.rs"
+
+[dependencies]
+eso-core = { path = "../eso-core" }

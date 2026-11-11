@@ -1,0 +1,5 @@
+[workspace]
+resolver = "2"
+members = ["eso-core", "eso-cli"]
+# The firmware targets AVR on nightly, so it is built on its own from ./firmware.
+exclude = ["firmware"]
